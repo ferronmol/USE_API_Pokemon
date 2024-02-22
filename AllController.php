@@ -11,8 +11,6 @@ class AllController
 {
     private $View; //objeto de la clase Login_formview
     private $Service; //objeto de la clase VuelosService
-
-
     /**
      * Constructor de la clase Controller.
      * 
@@ -23,16 +21,13 @@ class AllController
         $this->Service = new Service();
         $this->Service = new Service();
     }
-
     /**
      * Muestra la página de inicio 
      */
     public function mostrarInicio()
     {
 
-
         $this->View->initView(); //muestra la página de inicio 
-
     }
     /**
      * Pide al servidor el GET de una url y muestra la respuesta

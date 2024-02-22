@@ -81,7 +81,7 @@ class View
         //var_dump($res);
     ?>
         <h5 class="animate-character mt-2">select</h5>
-        <div class="form-container">
+        <div class="form-container"> <!-- fondo semioscuro-->
             <form class="form center" action="index.php?controller=all&action=procesarSelect" method="post">
                 <!-- <div class="form-group">
                     <label for=" identificador">Identificador</label>
@@ -282,17 +282,29 @@ class View
                 </tbody>
             </table>
         </div>
-<?php
+    <?php
     }
+    /**
+     * Metodo para mostrar elementos de un array 
+     */
     public function showMultiCard($card)
     {
-        foreach ($card['forms'] as $pok) {
-            $name = $pok['name'];
-        }
-        echo '<h2>' . $name . '</h2>';
+    ?>
+        <div class="form-container">
+            <!-- <h2>Aqui lo tienes: </h2> -->
+            <?php
+            foreach ($card['forms'] as $pok) {
+                $name = $pok['name'];
+            }
+            echo '<h2>Nombre: ' . $name . '</h2>';
 
-        echo '<img src="' . $card['sprites']['front_default'] . '">';
-        echo '<a href="index.php?controller=All&action=requestId" class="btn btn-primary mb-3 ">Back</a>';
+            echo '<img src="' . $card['sprites']['front_default'] . '">';
+            ?>
+            <!-- <img src="<?= $card //['sprites']['front_default'] 
+                            ?>" alt="Pokemon Image"> -->
+        </div>
+        <a href="index.php?controller=All&action=requestId" class="btn btn-primary mb-3 ">Back</a>
+<?php
     }
 
 
